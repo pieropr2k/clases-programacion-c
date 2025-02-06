@@ -2,6 +2,8 @@
 #include <math.h>
 #include <stdbool.h>
 
+
+
 // Función para verificar si un número es primo
 bool esPrimo(int n) {
     int i;
