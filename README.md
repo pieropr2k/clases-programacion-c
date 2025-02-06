@@ -69,8 +69,123 @@ Dado un número entero `n`, devuelve el n-ésimo número feo.
   - **Entrada:** `n = 7`
   - **Salida:** `8`
  
- 
+## Triangulos
 
+### **1. Triángulo Rectángulo con Asteriscos**
+Imprime un triángulo rectángulo de altura `n`.
+
+#### **Ejemplo**
+Entrada: `n = 5`
+Salida:
+```
+*
+**
+***
+****
+*****
+```
+
+---
+
+### **2. Triángulo Equilátero Centrado**
+Imprime un triángulo equilátero de altura `n`.
+
+#### **Ejemplo**
+Entrada: `n = 5`
+Salida:
+```
+    *    
+   ***   
+  *****  
+ ******* 
+*********
+```
+
+---
+
+### **3. Árbol de Navidad con Tronco**
+Imprime un árbol de Navidad de altura `n`, con un tronco de 2 líneas de alto y 3 caracteres de ancho.
+
+#### **Ejemplo**
+Entrada: `n = 5`
+Salida:
+```
+    *    
+   ***   
+  *****  
+ ******* 
+*********
+   |||   
+   |||   
+```
+
+---
+
+### **4. Pirámide Hueca**
+Imprime una pirámide de altura `n`, pero solo con los bordes.
+
+#### **Ejemplo**
+Entrada: `n = 5`
+Salida:
+```
+    *    
+   * *   
+  *   *  
+ *     * 
+*********
+```
+
+---
+
+### **5. Diamante con Asteriscos**
+Imprime un diamante de tamaño `n` (debe ser impar).
+
+#### **Ejemplo**
+Entrada: `n = 5`
+Salida:
+```
+  *  
+ *** 
+***** 
+ *** 
+  *  
+```
+
+---
+
+### **6. Rombo Hueco**
+Imprime un rombo hueco de tamaño `n` (debe ser impar).
+
+#### **Ejemplo**
+Entrada: `n = 7`
+Salida:
+```
+   *   
+  * *  
+ *   * 
+*     *
+ *   * 
+  * *  
+   *   
+```
+
+---
+
+### **7. Árbol de Navidad con Adornos Aleatorios**
+Imprime un árbol de Navidad con adornos (`o` y `x`) ubicados aleatoriamente en el follaje.
+
+#### **Ejemplo**
+Entrada: `n = 5`
+Salida (puede variar):
+```
+    *    
+   *o*   
+  *x*x*  
+ *o*x*o* 
+*********
+   |||   
+   |||   
+```
 
 
 * Escribe un programa en C que lea dos números enteros, a y b, e imprima cuántos números primos existen entre a y b (inclusive) cuyo cada dígito también sea un número primo.
