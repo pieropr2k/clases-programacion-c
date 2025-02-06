@@ -1,4 +1,5 @@
 *.exe
+
 invertir_long.c
 one.cpp
 palin.cpp

@@ -68,3 +68,13 @@ Dado un número entero `n`, devuelve el n-ésimo número feo.
 - **Ejemplo 4:**
   - **Entrada:** `n = 7`
   - **Salida:** `8`
+ 
+ 
+
+
+
+* Escribe un programa en C que lea dos números enteros, a y b, e imprima cuántos números primos existen entre a y b (inclusive) cuyo cada dígito también sea un número primo.
+
+## 2. Números Primos con Dígitos Primos en Secuencia
+
+* Escribe un programa en C que reciba un número n y luego imprima los primeros n números primos que tengan la característica de que todos los dígitos del número son primos y los dígitos están en orden ascendente (por ejemplo, 23, 37, 53, 73). Los números deben ser primos en sí mismos y deben seguir esta propiedad con sus dígitos.
