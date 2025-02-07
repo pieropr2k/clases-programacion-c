@@ -9,6 +9,9 @@ int main() {
     // Pedir al usuario la cantidad de cifras
     printf("Ingrese la cantidad de cifras: ");
     scanf("%d", &cifras);
+    
+    //4 cifras
+    // 1000 = 10^3, 9999 = 10000 - 1 = 10^4 -1
 
     // Calcular el rango del número aleatorio
     int limite_inferior = pow(10, cifras - 1);  // Mínimo número con esa cantidad de cifras
