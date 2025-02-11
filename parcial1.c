@@ -5,6 +5,9 @@
 #include <windows.h> //Para Sleep()
 #include <conio.h> //Para getch()
 #include <stdbool.h>
+
+int one = 0, three = 0, five = 0; // el contador de cada "numero de cifras"
+
 int main(void) {
 	int i, n; // Altura del árbol
 	printf("Ingresa n: ");
@@ -12,7 +15,7 @@ int main(void) {
     srand(time(NULL)); // Inicializar la semilla para la aleatoriedad
     
     int cifras, limite_inferior, limite_superior, numero_random; // para los randoms
-    int one = 0, three = 0, five = 0; // el contador de cada "numero de cifras"
+    //int one = 0, three = 0, five = 0; // el contador de cada "numero de cifras"
     int one_limit = 0.2*n, three_limit = 0.3*n, five_limit = 0.5*n; // limites de numeros a imprimir
     
     // random: 7 veces 1 => 7 = 2 + 5
