@@ -19,6 +19,7 @@ int returnedNumByPosition(int pos) {
 		// primero se da esto
 		if (isUgly(i)) {
 			c++;
+			printf("%i: ,", i);
 		}
 		if (c == pos) {
 			return i;

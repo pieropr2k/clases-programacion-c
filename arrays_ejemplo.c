@@ -22,11 +22,6 @@ int main(void) {
 	
     srand(time(NULL)); // Inicializar la semilla para la aleatoriedad
     
-    /*
-    int carro; // primero deberias declarar
-    carro = 0;
- 	*/
- 	
  	// funcion de numeros aleatorios
  	numeros_aleatorios(N, D);
  	// funcion de "palabras" aleatorias
@@ -41,7 +36,6 @@ void palabras_aleatorias(int P, int C) {
 	int i, cont_palabras_con_letras_iguales = 0;
 	
 	for (i = 0; i < P;  i++) {
-		//generar_palabra(C); // MNP, LKP, LLL
 		if (generar_palabra_y_detectar_si_es_igual(C)) {
 			cont_palabras_con_letras_iguales++;
 		}
@@ -97,21 +91,30 @@ void numeros_aleatorios(int N, int D) {
 	//N = 5, D = 2;
 	int i, rand;
 	int cont_digitos_iguales = 0;
+	int digitos[N]; // arreglo de tamaño N
 	
 	for (i = 0; i < N;  i++) {
-		rand = random_en_base_a_cifras(D);
-		if (digitosIguales(rand) == true) {
+		digitos[i] = random_en_base_a_cifras(D);
+		if (digitosIguales(digitos[i]) == true) {
 			cont_digitos_iguales++;
 		}
 		
 		if (i == N - 1) {
-			printf("%i\n", rand);
+			printf("%i\n", digitos[i]);
 		} else {
-			printf("%i, ", rand);
+			printf("%i, ", digitos[i]);
 		}
-		
 	}
 	printf("Se tiene %i numeros cuyos digitos son iguales. \n", cont_digitos_iguales);
+	
+	// Imprimo porque ya se guardaron
+	for (i = 0; i<N; i++) {
+		if (i == N - 1) {
+			printf("%i\n", digitos[i]);
+		} else {
+			printf("%i, ", digitos[i]);
+		}
+	}
 }
 
 bool digitosIguales(int x) {
