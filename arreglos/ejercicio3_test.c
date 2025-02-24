@@ -54,8 +54,14 @@ int main()
         scanf("%i", &N);
     } while (N <= 0);
     int array[N];
+    // array = {}
     arreglo_random(array, N);
+    // arra = {3,4,5,6,...}
     impresion(array, N);
     subarreglo_mayor_suma(array, N);
+    
     return (0);
 }
+
+//
+

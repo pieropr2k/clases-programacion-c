@@ -16,9 +16,12 @@ void subarreglo_mayor_suma(int arr[], int n) {
 	int mayor_index, menor_index;
 	int mayor_suma = -99, suma, i, j, k;
 	
+	// recorre ttodo
 	for (i = 0; i<n; i++) {
+		// saca las subarreglos
 		for (j = i; j<n; j++) {
 			suma = 0;
+			// suma el subarreglo
 			for (k = i; k<=j; k++) {
 				suma += arr[k];
 			}
