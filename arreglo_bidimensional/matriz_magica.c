@@ -5,6 +5,8 @@
 #include <stdbool.h> 
 
 bool analizarSumas(int filas, int columnas, int matriz[filas][columnas]);
+bool is_with_consecutive_numbers(int filas, int columnas, int matriz[filas][columnas]);
+bool is_in_array(int arr[], int length, int x);
  
 int main(){
 	/*
@@ -23,7 +25,7 @@ int main(){
 	//generarMatriz(N, M, matriz);
 	
 	//imprimirMatriz(N, M, matriz);
-	if (analizarSumas(N, M, matriz)) {
+	if (analizarSumas(N, M, matriz) && is_with_consecutive_numbers(N, M, matriz)) {
 		printf("Es magica");
 	} else {
 		printf("No lo es");
@@ -86,6 +88,37 @@ bool analizarSumas(int filas, int columnas, int matriz[filas][columnas]) {
 	}
 	
 	return true;
+}
+
+bool is_with_consecutive_numbers(int filas, int columnas, int matriz[filas][columnas]) {
+    int i, j;
+    // counter[] = {} => {2} => {2,7}
+    int counter[filas*columnas], k=0; // k: indice 
+	for(i=0; i<filas; i++){  
+		for(j=0; j<columnas; j++){
+			
+			if (is_in_array(counter, k, matriz[i][j])) {
+				return false;
+			} else {
+				counter[k++] = matriz[i][j];
+			} 
+		}   
+	} 
+	if (k == filas*columnas) {
+		return true;
+	} else {
+		return false;
+	}
+	 
+}
+
+bool is_in_array(int arr[], int length, int x) {
+	int i;
+	for (i=0; i<length; i++)
+		if (arr[i] == x)
+			return true;
+	
+	return false;
 }
 
 /*

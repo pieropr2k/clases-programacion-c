@@ -6,7 +6,7 @@
 int main() {
 	srand(time(NULL));
 	
-	int N = 4, M = 3;
+	int N = 5, M = 6;
 	int arr1[N], arr2[M];
 	//printf("Dame el numero N:\n");
 	//scanf("%d", &n);
@@ -46,7 +46,6 @@ void ordenar_array(int arr[], int longitud) {
 	for(i = 0; i< longitud; i++) {
 		// para ordenar por pares consecutivos
 		for(j = 0; j < longitud-1; j++) {
-			
 			if (arr[j] < arr[j+1]) {
 				aux = arr[j+1];
 				arr[j + 1] = arr[j];
@@ -56,9 +55,6 @@ void ordenar_array(int arr[], int longitud) {
 		}
 	}
 	// [4,8,5,9,3,7,4,2,7,1];
-	
-	
-	
 	printf("Arreglo Ordenado:\n");
 	// aca imprimimos el arreglo ordenado
 	for(i = 0; i< longitud; i++) {
@@ -71,35 +67,57 @@ void generar_arr_final(int arr1[], int N, int arr2[], int M, int arr3[]) {
 	// ordenamiento creciente
 	// burbuja
 	int longitud = N + M;
-	int i, j, k = 0, j2 = 0, aux;
-	
 	/*
-	arr1:[9,7,5,1]
-	arr2:[10,6,2]
+	arr1:[9,7,5|,1]
+	arr2:[10,6,|2]
 	
 	arr3 : [10 |,9,7,| 6 | 5,1 | 2]
 	
 	10, 9, 
-	*/
+	*/ 
+	int i = 0, j = 0, k = 0;
+	// i: numero de elementos tomados en arr1, j: numero de elementos tomados en arr2
+
+	// [11,10,8,7,6,5, _ ]	
+	// N = 4, M = 3
+	// i = 3, j = 2
+	// i = 3, j = 3
 	
-	// arr1
-	for(i = 0; i< N; i++) {
-		// arr2
-		for(j = j2; j < M; j++) {
-			if (arr1[i] >= arr2[j]) {
-				arr3[k++] = arr1[i];
-				j2 = j;
-				break;
-			} else {
-				arr3[k++] = arr2[j];
-			}
-			 
-		}
+    // Mezclar los dos arreglos ordenados en arr3
+    
+	while (i < N && j < M) {
+        if (arr1[i] > arr2[j]) {
+            arr3[k++] = arr1[i++];
+        } else {
+            arr3[k++] = arr2[j++];
+        }
+    }
+    
+    /*
+    for (i = 0, j = 0; i<N && j<M; k++) {
+    	// k aumenta si o si
+    	if (arr1[i] > arr2[j]) {
+    		// solo i va a aumentar
+            arr3[k] = arr1[i];
+            //k++;
+            i++;
+        } else {
+        	// solo j va a aumentar
+            arr3[k] = arr2[j++];
+        }
 	}
-	// [4,8,5,9,3,7,4,2,7,1];
-	
-	
-    // Copiar elementos restantes de arr2 
+	*/
+ 
+ 	// [1,5,6,7, 11, _, _, _ , _ ] 
+ 	
+ 	// 2 whiles para completar de manera definitiva arr3
+    while (i < N) {
+        arr3[k++] = arr1[i++];
+    }
+    
+    while (j < M) {
+        arr3[k++] = arr2[j++];
+    }
 	
 	printf("Arreglo Ordenado:\n");
 	// aca imprimimos el arreglo ordenado

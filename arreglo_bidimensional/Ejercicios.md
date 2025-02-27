@@ -6,9 +6,9 @@
 Haz el juego del michi.
 
 
-### Rotación de Matriz 90°
+### Rotaciï¿½n de Matriz 90ï¿½
 
-Dada una matriz cuadrada N×N, escribe una función en C que la rote 90 grados en sentido horario.
+Dada una matriz cuadrada Nï¿½N, escribe una funciï¿½n en C que la rote 90 grados en sentido horario.
 
 De: 
 
@@ -22,7 +22,7 @@ A:
 8   5   2<br>
 9   6   3
 
-### Multiplicación de Dos Matrices
+### Multiplicaciï¿½n de Dos Matrices
 
 Dadas dos matrices A[M][N] y B[N][P], calcula su producto matricial C[M][P]
 
@@ -32,7 +32,7 @@ Dada una matriz cuadrada, encuentra la suma de la diagonal principal y la secund
 Evita sumar el elemento central dos veces si N es impar.
 
 Ejm:
-Si tenemos la siguiente matriz de **3×3**:
+Si tenemos la siguiente matriz de **3ï¿½3**:
 
 1 2 3 <br/>
 4 5 6 <br/>
@@ -44,9 +44,9 @@ Si tenemos la siguiente matriz de **3×3**:
   `1 + 5 + 9 + 3 + 7 = 25` (Solo se suma el 5 una vez).
 
 ?? **Caso cuando ?? es par**:  
-Si la matriz es **4×4**, todas las posiciones se suman sin problemas.
+Si la matriz es **4ï¿½4**, todas las posiciones se suman sin problemas.
 
-Ejemplo de una matriz **4×4**:
+Ejemplo de una matriz **4ï¿½4**:
 
 1 2 3 4 <br/>
 5 6 7 8 <br/>
@@ -61,5 +61,110 @@ Ejemplo de una matriz **4×4**:
 
 ### Encuentra la Submatriz con la Mayor Suma (Kadane 2D)
 
-Dada una matriz de enteros (positivos y negativos), encuentra la submatriz de tamaño variable cuya suma sea máxima.
+Dada una matriz de enteros (positivos y negativos), encuentra la submatriz de tamaï¿½o variable cuya suma sea mï¿½xima.
 
+
+## Subsecuencia mayor
+
+Dado una matriz, sacar la subsecuencia mayor de la matriz
+
+
+## Problema del Robot Nao
+
+### DescripciÃ³n del Problema
+
+Dada una matriz 2D de nÃºmeros, donde todos son positivos y distintos entre sÃ­, se tiene un robot Nao que comienza en la posiciÃ³n (0, 0). El robot puede moverse hacia la derecha, hacia abajo o en diagonal, seleccionando siempre la direcciÃ³n que conduce al valor mÃ¡ximo.
+
+El objetivo es escribir un programa en C++ que imprima la suma de la ruta total que sigue el robot.
+
+### Especificaciones
+
+- **Entrada:**
+  - NÃºmero de filas (`ROWS`) y columnas (`COLS`) de la matriz.
+  - Los elementos de la matriz.
+
+- **Salida:**
+  - La suma de la ruta total que sigue el robot.
+
+### Ejemplo de EjecuciÃ³n
+
+**Entrada:**
+
+NÃºmero de filas (ROWS) y columnas (COLS) de la matriz (grid):
+3 3
+
+Elementos de la matriz:
+1 7 8 <br/>
+2 10 11 <br/>
+20 5 9
+
+**Salida:**
+31 (de 1 + 10 + 11 + 9)
+
+### ExplicaciÃ³n del Ejemplo
+
+1. **Inicio del robot en (0, 0):** El robot comienza en la celda (0, 0) con valor `1`.
+2. **Primer movimiento:** Desde (0, 0), el robot tiene 3 valores posibles para moverse: `2`, `7`, y `10`. Selecciona el valor mÃ¡ximo `10` y se mueve a esa celda.
+3. **Segundo movimiento:** Desde la celda con valor `10`, el robot tiene 3 valores posibles para moverse: `5`, `9`, y `11`. Selecciona el valor mÃ¡ximo `11` y se mueve a esa celda.
+4. **Tercer movimiento:** Desde la celda con valor `11`, solo tiene un valor disponible para moverse: `9`. Se mueve a esa celda.
+5. **Suma total:** La suma de la ruta es `1 + 10 + 11 + 9 = 31`.
+
+
+
+## Programa de ManipulaciÃ³n de Matrices usando Apuntadores
+
+### DescripciÃ³n del Problema
+
+Elaborar un programa en C++ que solicite el orden de una matriz rectangular (`m` filas y `n` columnas). Luego, se leerÃ¡n los valores de la matriz utilizando un apuntador. El programa debe realizar las siguientes tareas:
+
+1. **Mostrar la matriz ingresada usando un apuntador.**
+2. **Determinar las columnas cuya suma de elementos sea la mayor y la menor de todas, utilizando apuntadores.**
+3. **Intercambiar los valores de esas columnas, dejando las demÃ¡s iguales, utilizando apuntadores.**
+4. **Mostrar la matriz resultante usando un apuntador.**
+5. **Determinar el valor mÃ­nimo de los valores mÃ¡ximos de cada fila de la matriz, utilizando un apuntador.**
+
+### Entrada:
+- El orden de la matriz (`m` filas y `n` columnas).
+- Los valores de la matriz.
+
+### Salida:
+1. La matriz ingresada.
+2. La suma de cada columna.
+3. La columna con la suma menor y la columna con la suma mayor.
+4. La matriz resultante despuÃ©s del intercambio de columnas.
+5. El valor mÃ­nimo de los valores mÃ¡ximos de cada fila.
+
+---
+
+## Ejemplo de EjecuciÃ³n
+
+### Entrada:
+
+Ingrese el orden de la matriz= 3 4
+
+2 5 6 8 <br/>
+3 5 7 9 <br/>
+1 4 2 6 <br/>
+
+
+### Salida:
+
+Matriz ingresada
+
+2 5 6 8 <br/>
+3 5 7 9 <br/>
+1 4 2 6 <br/>
+
+Suma de columnas: <br/>
+6 14 15 23
+
+Suma menor= 6, columna= 0 <br/>
+Suma mayor= 23, columna= 3
+
+Matriz resultante
+
+8 5 6 2 <br/>
+9 5 7 3 <br/>
+6 4 2 1 <br/>
+
+Valor minmax= 6
