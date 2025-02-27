@@ -20,50 +20,66 @@ int main(){
 	
 	generarMatriz(N, M, matriz);
 	
-	/*
+	/*Subsecuencia mayor:
+	1era fila: inicio = 0, final = 2
+	2da fila:  inicio = 6, final = 9
+	3era fila: inicio = 6, final = 11
+	4ta fila: inicio = 6, final = 11
+	
 	int matriz[4][5] = {
 		{11, 17, 33, 6, 4},
 		{2, 1, 3, 5, 6},
 		{7, 11, 5, 2, 3},
 		{3, 91, 9, 11, 56},
 	};
+	
+	array[] = {11, 17, 33, 6, 4, 2, 1, 3, 5, 6, 7, 11, 5, 2, 3, 3, 91, 9, 11, 56},
 	*/
 	
 	imprimirMatriz(N, M, matriz);	
 	//generar_matriz(N, M, matriz);
 	mayor_sub = mayor_subsecuencia(N, M, matriz); 
-	printf("\nTamaño mayor tamaño: %i", mayor_sub);
+	printf("\nTamaño mayor subsecuencia: %i", mayor_sub);
 }
 
 int mayor_subsecuencia(int filas, int columnas, int matriz[filas][columnas]) {
-    int i, j, c = 0, past = matriz[0][0], mayor = -1, pre_inicio = 0, inicio, final;
-    for (i = 0; i < filas; i++) {
+	// mayor longitud de subsecuencia: 
+    int i, j, longitud = 0, valor_pasado = matriz[0][0], mayor_longitud = -1;
+    // indices mayor subsecuencia
+	int pre_idx_inicial = 0, idx_inicial, idx_final;
+    
+	for (i = 0; i < filas; i++) {
         for (j = 0; j < columnas; j++) { 
-        	if (matriz[i][j] > past) {
-        		c++;	
+        	if (matriz[i][j] > valor_pasado) {
+        		longitud++;	
 			} else {
-				c = 1;
-				pre_inicio = j + columnas*(i); 
+				// reinicias
+				longitud = 1;
+				pre_idx_inicial = j + columnas*(i); 
 			}
-			if (c > mayor) {
-				inicio = pre_inicio; 
-				mayor = c;
-				final = j + columnas*(i); 
-			} 
-			past = matriz[i][j];
+			if (longitud > mayor_longitud) {
+				mayor_longitud = longitud;
+				
+				// actualizan los indices "definitivos"
+				idx_inicial = pre_idx_inicial; 
+				idx_final = j + columnas*(i); 
+			}
+			// guardas el valor de la iteracion, para que en la siguiente sea un valor "predecesor" o "antiguo" 
+			valor_pasado = matriz[i][j];
         }
     } 
     printf("Subsecuencia: \n");
     
     for (i = 0; i < filas; i++) {
-        for (j = 0; j < columnas; j++) {  
-        	if (inicio <= j + columnas*(i) && j + columnas*(i) <= final) {
+        for (j = 0; j < columnas; j++) { 
+			// [idx_inicial, idx_final] 
+        	if (idx_inicial <= j + columnas*(i) && j + columnas*(i) <= idx_final) {
         		printf("%i, ", matriz[i][j]);
 			}
         }
-    }
+    } 
     
-    return mayor;
+    return mayor_longitud;
 }
 
 void generarMatriz(int fil, int col, int matriz[fil][col]) {
