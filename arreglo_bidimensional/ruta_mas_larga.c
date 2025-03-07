@@ -9,7 +9,7 @@ void susIniciales2(int fil, int col, int matriz[fil][col], int arr1[]);
 void susIniciales3(int fil, int col, int matriz[fil][col], int arr1[], int arr2[]);
 void susIniciales5(int arr[], int len);
 void generar_matriz(int filas, int columnas, int matriz[filas][columnas]);
-void imprimirMatriz(int filas, int columnas, int matriz[filas][columnas]);
+void susIniciales4(int filas, int columnas, int matriz[filas][columnas]);
 
 int main(){
 	int N = 5, M = 5, mayor_sub;
@@ -33,7 +33,7 @@ int main(){
 	
 	int ARRAY1[100], ARRAY2[100];
 	
-	imprimirMatriz(N, M, matriz);
+	susIniciales4(N, M, matriz);
 	
 	susIniciales2(N, M, matriz, ARRAY1);
 	susIniciales3(N, M, matriz, ARRAY1, ARRAY2);
@@ -80,7 +80,7 @@ bool isInArray(int x, int arr[], int len) {
 void susIniciales3(int fil, int col, int matriz[fil][col], int arr1[], int arr2[]) {
 	int i, j, k = 0; 
 	// arr1[i] : condicion de existencia
-	for (i = 0; arr1[i]; i++) {
+	for (i = 0; arr1[i] != '\0'; i++) {
         int ruta = ruta_mas_larga(fil, col, matriz, arr1[i]);
         
         printf("%d, ", ruta);
@@ -134,7 +134,7 @@ void generarMatriz(int fil, int col, int matriz[fil][col]) {
 	}
 }
 
-void imprimirMatriz(int filas, int columnas, int matriz[filas][columnas]) {
+void susIniciales4(int filas, int columnas, int matriz[filas][columnas]) {
     int i, j;
 	printf("\nMatriz de %dx%d:\n", filas, columnas);
     for (i = 0; i < filas; i++) {
